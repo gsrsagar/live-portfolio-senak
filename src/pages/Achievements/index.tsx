@@ -51,7 +51,7 @@ function StatCounter({ stat, index }: { stat: typeof stats[0]; index: number }) 
 
   return (
     <motion.div
-      ref={ref as React.RefObject<HTMLDivElement>}
+      ref={ref}
       className="card p-6 text-center"
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
