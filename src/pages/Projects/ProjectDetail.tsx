@@ -99,13 +99,13 @@ export default function ProjectDetailPage() {
           {/* Stats */}
           {project.stats && (
             <motion.div
-              className="grid grid-cols-3 gap-4 mb-10"
+              className="grid grid-cols-3 gap-6 mb-12"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
               {project.stats.map(({ label, value }) => (
-                <div key={label} className="card p-5 text-center">
+                <div key={label} className="card p-8 text-center">
                   <p className="text-2xl font-bold mb-1" style={{ fontFamily: 'var(--font-number)', color: 'var(--color-primary)' }}>
                     {value}
                   </p>
@@ -116,7 +116,7 @@ export default function ProjectDetailPage() {
           )}
 
           {/* Content Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {/* Main Content */}
             <div className="md:col-span-2 flex flex-col gap-8">
               {/* Problem Statement */}
@@ -124,7 +124,7 @@ export default function ProjectDetailPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="card p-6"
+                className="card p-8"
               >
                 <h2 className="text-xl mb-3" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text)' }}>
                   Problem Statement
@@ -137,7 +137,7 @@ export default function ProjectDetailPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="card p-6"
+                className="card p-8"
               >
                 <h2 className="text-xl mb-3" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text)' }}>
                   About the Project
@@ -150,7 +150,7 @@ export default function ProjectDetailPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="card p-6"
+                className="card p-8"
                 style={{ background: 'linear-gradient(135deg, rgba(255,122,0,0.04), var(--color-card))' }}
               >
                 <h2 className="text-xl mb-3" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text)' }}>
@@ -164,7 +164,7 @@ export default function ProjectDetailPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="card p-6"
+                className="card p-8"
               >
                 <h2 className="text-xl mb-4" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text)' }}>
                   Key Features
@@ -172,8 +172,8 @@ export default function ProjectDetailPage() {
                 <ul className="flex flex-col gap-3">
                   {project.features.map((f) => (
                     <li key={f} className="flex items-start gap-3">
-                      <CheckCircle2 size={16} className="mt-0.5 flex-shrink-0" style={{ color: 'var(--color-primary)' }} />
-                      <span className="text-sm" style={{ color: 'var(--color-text-muted)' }}>{f}</span>
+                      <CheckCircle2 size={18} className="mt-0.5 flex-shrink-0" style={{ color: 'var(--color-primary)' }} />
+                      <span className="text-base" style={{ color: 'var(--color-text-muted)' }}>{f}</span>
                     </li>
                   ))}
                 </ul>
@@ -187,7 +187,7 @@ export default function ProjectDetailPage() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3 }}
-                className="card p-5"
+                className="card p-8"
               >
                 <h3 className="text-sm font-semibold mb-3 uppercase tracking-wider" style={{ fontFamily: 'var(--font-code)', color: 'var(--color-text-muted)' }}>
                   Tech Stack
@@ -205,7 +205,7 @@ export default function ProjectDetailPage() {
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.4 }}
-                  className="card p-5"
+                  className="card p-8"
                 >
                   <h3 className="text-sm font-semibold mb-3 uppercase tracking-wider" style={{ fontFamily: 'var(--font-code)', color: 'var(--color-text-muted)' }}>
                     Screenshots

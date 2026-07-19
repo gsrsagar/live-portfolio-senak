@@ -30,7 +30,7 @@ export default function EducationPage() {
           {education.map((edu, i) => (
             <motion.div
               key={edu.id}
-              className="card p-8 mb-8 hoverable gradient-border"
+              className="card p-10 mb-10 gradient-border"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -68,19 +68,19 @@ export default function EducationPage() {
                 </div>
               </div>
 
-              <p className="text-sm mb-6 leading-relaxed" style={{ color: 'var(--color-text-muted)' }}>
+              <p className="text-base mb-8 leading-relaxed" style={{ color: 'var(--color-text-muted)' }}>
                 {edu.description}
               </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Achievements */}
                 <div>
-                  <h3 className="flex items-center gap-2 text-sm font-semibold uppercase tracking-wider mb-3" style={{ color: 'var(--color-text-muted)', fontFamily: 'var(--font-code)' }}>
+                  <h3 className="flex items-center gap-2 text-sm font-semibold uppercase tracking-wider mb-4" style={{ color: 'var(--color-text-muted)', fontFamily: 'var(--font-code)' }}>
                     <Award size={14} style={{ color: 'var(--color-primary)' }} /> Achievements
                   </h3>
-                  <ul className="flex flex-col gap-2">
+                  <ul className="flex flex-col gap-3">
                     {edu.achievements.map((a) => (
-                      <li key={a} className="flex items-center gap-2 text-sm" style={{ color: 'var(--color-text-muted)' }}>
+                      <li key={a} className="flex items-center gap-2.5 text-base" style={{ color: 'var(--color-text-muted)' }}>
                         <span style={{ color: 'var(--color-primary)' }}>✓</span> {a}
                       </li>
                     ))}

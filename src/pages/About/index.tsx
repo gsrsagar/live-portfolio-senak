@@ -93,7 +93,7 @@ export default function AboutPage() {
 
             {/* Personal Info Grid */}
             <motion.div
-              className="grid grid-cols-2 md:grid-cols-3 gap-4"
+              className="grid grid-cols-2 md:grid-cols-3 gap-5"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
@@ -108,10 +108,10 @@ export default function AboutPage() {
               ].map(({ label, value }) => (
                 <div
                   key={label}
-                  className="card p-4"
+                  className="card p-6"
                 >
-                  <p className="text-xs mb-1" style={{ color: 'var(--color-text-muted)', fontFamily: 'var(--font-code)' }}>{label}</p>
-                  <p className="text-sm font-semibold" style={{ color: 'var(--color-text)', fontFamily: 'var(--font-heading)' }}>{value}</p>
+                  <p className="text-sm mb-2" style={{ color: 'var(--color-text-muted)', fontFamily: 'var(--font-code)' }}>{label}</p>
+                  <p className="text-base font-semibold" style={{ color: 'var(--color-text)', fontFamily: 'var(--font-heading)' }}>{value}</p>
                 </div>
               ))}
             </motion.div>
@@ -122,7 +122,7 @@ export default function AboutPage() {
       {/* Mission & Vision */}
       <section className="section" aria-label="Mission and vision">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <motion.div
               className="card p-8"
               style={{ background: 'linear-gradient(135deg, rgba(255,122,0,0.06), var(--color-card))' }}
@@ -175,13 +175,13 @@ export default function AboutPage() {
             <h2>Core <span className="gradient-text">Values</span></h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
             {values.map((v, i) => {
               const Icon = v.icon;
               return (
                 <motion.div
                   key={v.title}
-                  className="card p-6 text-center gradient-border"
+                  className="card p-8 text-center gradient-border"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -242,8 +242,8 @@ export default function AboutPage() {
                   </div>
 
                   {/* Card */}
-                  <div className="flex-1 card p-5">
-                    <div className="flex items-start justify-between gap-2 mb-2">
+                  <div className="flex-1 card p-7">
+                    <div className="flex items-start justify-between gap-2 mb-3">
                       <span
                         className="text-xs font-bold"
                         style={{ fontFamily: 'var(--font-code)', color: 'var(--color-primary)' }}
@@ -252,10 +252,10 @@ export default function AboutPage() {
                       </span>
                       <span className="badge">{item.tag}</span>
                     </div>
-                    <h4 className="mb-1.5" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text)' }}>
+                    <h4 className="mb-2" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text)' }}>
                       {item.title}
                     </h4>
-                    <p className="text-sm" style={{ color: 'var(--color-text-muted)' }}>{item.description}</p>
+                    <p className="text-base" style={{ color: 'var(--color-text-muted)' }}>{item.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -277,13 +277,13 @@ export default function AboutPage() {
             <h2>Fun <span className="gradient-text">Facts</span></h2>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
             {funFacts.map((fact, i) => {
               const Icon = fact.icon;
               return (
                 <motion.div
                   key={fact.label}
-                  className="card p-6 text-center"
+                  className="card p-8 text-center"
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}

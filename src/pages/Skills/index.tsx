@@ -33,27 +33,23 @@ const techIcons: Record<string, string> = {
 };
 
 function SkillCard({ skill, index }: { skill: typeof skills[0]; index: number }) {
-  const [hovered, setHovered] = useState(false);
-
   return (
     <motion.div
-      className="card p-4 hoverable"
+      className="card p-6"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.05 }}
-      onHoverStart={() => setHovered(true)}
-      onHoverEnd={() => setHovered(false)}
       whileHover={{ y: -4 }}
     >
       {/* Icon + Name */}
-      <div className="flex items-center gap-3 mb-3">
-        <span className="text-xl">{techIcons[skill.icon] ?? '💻'}</span>
+      <div className="flex items-center gap-3.5 mb-4">
+        <span className="text-2xl">{techIcons[skill.icon] ?? '💻'}</span>
         <div className="flex-1 min-w-0">
-          <p className="text-sm font-medium truncate" style={{ color: 'var(--color-text)', fontFamily: 'var(--font-heading)' }}>
+          <p className="text-base font-semibold truncate" style={{ color: 'var(--color-text)', fontFamily: 'var(--font-heading)' }}>
             {skill.name}
           </p>
-          <p className="text-xs" style={{ color: 'var(--color-text-muted)', fontFamily: 'var(--font-code)' }}>
+          <p className="text-sm" style={{ color: 'var(--color-primary)', fontFamily: 'var(--font-number)' }}>
             {skill.level}%
           </p>
         </div>
@@ -61,14 +57,13 @@ function SkillCard({ skill, index }: { skill: typeof skills[0]; index: number })
 
       {/* Progress Bar */}
       <div
-        className="h-1.5 rounded-full overflow-hidden"
+        className="h-2 rounded-full overflow-hidden"
         style={{ background: 'rgba(255,255,255,0.06)' }}
       >
         <motion.div
           className="h-full rounded-full"
           style={{ background: `linear-gradient(90deg, var(--color-primary), ${skill.color})` }}
           initial={{ width: 0 }}
-          animate={hovered ? { width: `${skill.level}%` } : { width: `${skill.level}%` }}
           whileInView={{ width: `${skill.level}%` }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: 'easeOut', delay: index * 0.04 }}
@@ -165,7 +160,7 @@ export default function SkillsPage() {
           </motion.div>
 
           {/* Radar Chart + Top Stats */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
             <motion.div
               className="card p-8"
               initial={{ opacity: 0, x: -30 }}
@@ -220,12 +215,12 @@ export default function SkillsPage() {
           </div>
 
           {/* Category Filter */}
-          <div className="flex flex-wrap gap-2 mb-8">
+          <div className="flex flex-wrap gap-2.5 mb-10">
             {(['All', ...CATEGORIES] as const).map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat as SkillCategory | 'All')}
-                className="px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 hoverable"
+                className="px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200"
                 style={{
                   background: activeCategory === cat ? 'linear-gradient(135deg, #FF7A00, #FFC107)' : 'var(--color-card)',
                   color: activeCategory === cat ? '#000' : 'var(--color-text-muted)',
@@ -239,7 +234,7 @@ export default function SkillsPage() {
 
           {/* Skills Grid */}
           <motion.div
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3"
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5"
             layout
           >
             {filtered.map((skill, i) => (

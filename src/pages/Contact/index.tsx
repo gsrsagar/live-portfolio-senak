@@ -130,12 +130,12 @@ export default function ContactPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <div className="card p-8">
+              <div className="card p-10">
                 <h2 className="text-xl mb-6" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text)' }}>
                   Send a Message
                 </h2>
 
-                <form onSubmit={handleSubmit(onSubmit)} noValidate className="flex flex-col gap-4">
+                <form onSubmit={handleSubmit(onSubmit)} noValidate className="flex flex-col gap-5">
                   {/* Name + Email Row */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
@@ -237,7 +237,7 @@ export default function ContactPage() {
             >
               {/* Availability */}
               <div
-                className="card p-5"
+                className="card p-7"
                 style={{ background: 'linear-gradient(135deg, rgba(34,197,94,0.06), var(--color-card))' }}
               >
                 <div className="flex items-center gap-2 mb-2">
@@ -252,44 +252,44 @@ export default function ContactPage() {
               </div>
 
               {/* Direct Connect */}
-              <div className="card p-5">
+              <div className="card p-7">
                 <h3 className="text-sm font-semibold mb-4 uppercase tracking-wider" style={{ fontFamily: 'var(--font-code)', color: 'var(--color-text-muted)' }}>
                   Direct Connect
                 </h3>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-3">
                   {directLinks.map(({ icon: Icon, label, value, href, color }) => (
                     <a
                       key={label}
                       href={href}
                       target={href.startsWith('http') ? '_blank' : undefined}
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between px-3 py-2.5 rounded-xl hoverable"
+                      className="flex items-center justify-between px-3.5 py-3 rounded-xl hoverable"
                       style={{
                         border: '1px solid var(--color-border)',
                         transition: 'all 0.2s',
                       }}
                       aria-label={`Contact via ${label}`}
                     >
-                      <div className="flex items-center gap-2.5">
-                        <Icon size={15} style={{ color }} />
+                      <div className="flex items-center gap-3">
+                        <Icon size={16} style={{ color }} />
                         <div>
-                          <p className="text-xs font-medium" style={{ color: 'var(--color-text)' }}>{label}</p>
-                          <p className="text-xs" style={{ color: 'var(--color-text-muted)' }}>{value}</p>
+                          <p className="text-sm font-medium" style={{ color: 'var(--color-text)' }}>{label}</p>
+                          <p className="text-sm" style={{ color: 'var(--color-text-muted)' }}>{value}</p>
                         </div>
                       </div>
-                      <ArrowRight size={13} style={{ color: 'var(--color-text-muted)' }} />
+                      <ArrowRight size={14} style={{ color: 'var(--color-text-muted)' }} />
                     </a>
                   ))}
                 </div>
               </div>
 
               {/* Location */}
-              <div className="card p-5">
+              <div className="card p-7">
                 <h3 className="flex items-center gap-2 text-sm font-semibold mb-3 uppercase tracking-wider" style={{ fontFamily: 'var(--font-code)', color: 'var(--color-text-muted)' }}>
-                  <MapPin size={13} style={{ color: 'var(--color-primary)' }} /> Location
+                  <MapPin size={14} style={{ color: 'var(--color-primary)' }} /> Location
                 </h3>
-                <p className="text-sm font-medium mb-1" style={{ color: 'var(--color-text)' }}>Hyderabad, India</p>
-                <p className="text-xs" style={{ color: 'var(--color-text-muted)' }}>IST (UTC+5:30) · Working globally</p>
+                <p className="text-base font-medium mb-1.5" style={{ color: 'var(--color-text)' }}>Hyderabad, India</p>
+                <p className="text-sm" style={{ color: 'var(--color-text-muted)' }}>IST (UTC+5:30) · Working globally</p>
 
                 {/* Simple Map Embed */}
                 <div className="mt-3 rounded-xl overflow-hidden" style={{ height: '140px' }}>
@@ -307,15 +307,15 @@ export default function ContactPage() {
               </div>
 
               {/* Phone */}
-              <div className="card p-5 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'rgba(255,122,0,0.1)' }}>
-                  <Phone size={16} style={{ color: 'var(--color-primary)' }} />
+              <div className="card p-7 flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'rgba(255,122,0,0.1)' }}>
+                  <Phone size={18} style={{ color: 'var(--color-primary)' }} />
                 </div>
                 <div>
-                  <p className="text-xs" style={{ color: 'var(--color-text-muted)' }}>Phone</p>
+                  <p className="text-sm" style={{ color: 'var(--color-text-muted)' }}>Phone</p>
                   <a
                     href="tel:+919876543210"
-                    className="text-sm font-medium hoverable"
+                    className="text-base font-medium"
                     style={{ color: 'var(--color-text)' }}
                   >
                     +91 9876 543 210

@@ -30,11 +30,11 @@ export default function ServicesPage() {
           </motion.div>
 
           {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
             {services.map((service, i) => (
               <motion.div
                 key={service.id}
-                className={`card p-6 hoverable relative overflow-hidden ${service.popular ? 'gradient-border' : ''}`}
+                className={`card p-8 relative overflow-hidden ${service.popular ? 'gradient-border' : ''}`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -62,18 +62,18 @@ export default function ServicesPage() {
                   {service.icon}
                 </div>
 
-                <h3 className="text-lg font-semibold mb-2" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text)' }}>
+                <h3 className="text-xl font-semibold mb-3" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text)' }}>
                   {service.title}
                 </h3>
-                <p className="text-sm mb-4 leading-relaxed" style={{ color: 'var(--color-text-muted)' }}>
+                <p className="text-base mb-5 leading-relaxed" style={{ color: 'var(--color-text-muted)' }}>
                   {service.description}
                 </p>
 
                 {/* Features */}
-                <ul className="flex flex-col gap-2 mb-6">
+                <ul className="flex flex-col gap-3 mb-7">
                   {service.features.map((f) => (
-                    <li key={f} className="flex items-center gap-2 text-sm" style={{ color: 'var(--color-text-muted)' }}>
-                      <Check size={13} style={{ color: 'var(--color-primary)', flexShrink: 0 }} />
+                    <li key={f} className="flex items-center gap-2.5 text-base" style={{ color: 'var(--color-text-muted)' }}>
+                      <Check size={14} style={{ color: 'var(--color-primary)', flexShrink: 0 }} />
                       {f}
                     </li>
                   ))}
@@ -92,8 +92,8 @@ export default function ServicesPage() {
 
           {/* CTA */}
           <motion.div
-            className="card p-10 text-center"
-            style={{ background: 'linear-gradient(135deg, rgba(255,122,0,0.06), var(--color-card))' }}
+            className="card p-12 text-center"
+            style={{ background: 'linear-gradient(135deg, rgba(255,122,0,0.05), var(--color-card))' }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

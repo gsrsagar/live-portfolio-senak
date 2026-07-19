@@ -30,8 +30,8 @@ function StarRating({ rating }: { rating: number }) {
 function TestimonialCard({ t }: { t: typeof testimonials[0] }) {
   return (
     <div
-      className="card p-8 h-full flex flex-col"
-      style={{ minHeight: '320px' }}
+      className="card p-10 h-full flex flex-col"
+      style={{ minHeight: '340px' }}
     >
       {/* Quote Icon */}
       <div className="mb-5">
@@ -122,7 +122,7 @@ export default function TestimonialsPage() {
           </motion.div>
 
           {/* Stats Row */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
             {[
               { value: '100%', label: 'Client Satisfaction' },
               { value: '10+', label: 'Projects Delivered' },
@@ -131,7 +131,7 @@ export default function TestimonialsPage() {
             ].map(({ value, label }, i) => (
               <motion.div
                 key={label}
-                className="card p-6 text-center"
+                className="card p-8 text-center"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

@@ -54,7 +54,7 @@ export default function ExperiencePage() {
               aria-hidden="true"
             />
 
-            <div className="flex flex-col gap-10">
+            <div className="flex flex-col gap-12">
               {experiences.map((exp, i) => (
                 <motion.div
                   key={exp.id}
@@ -76,7 +76,7 @@ export default function ExperiencePage() {
                   />
 
                   {/* Card */}
-                  <div className="card p-6 hoverable gradient-border">
+                  <div className="card p-8 gradient-border">
                     {/* Header Row */}
                     <div className="flex flex-col sm:flex-row sm:items-start gap-4 mb-5">
                       {/* Logo */}
@@ -85,8 +85,8 @@ export default function ExperiencePage() {
                       </div>
 
                       <div className="flex-1">
-                        <div className="flex flex-wrap items-center gap-2 mb-1">
-                          <h2 className="text-lg font-semibold" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text)' }}>
+                        <div className="flex flex-wrap items-center gap-2.5 mb-2">
+                          <h2 className="text-xl font-semibold" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text)' }}>
                             {exp.role}
                           </h2>
                           <span
@@ -111,7 +111,7 @@ export default function ExperiencePage() {
                           {exp.company} <ExternalLink size={12} />
                         </a>
 
-                        <div className="flex flex-wrap items-center gap-4 mt-2 text-xs" style={{ color: 'var(--color-text-muted)' }}>
+                        <div className="flex flex-wrap items-center gap-4 mt-2.5 text-sm" style={{ color: 'var(--color-text-muted)' }}>
                           <span className="flex items-center gap-1.5">
                             <Calendar size={12} style={{ color: 'var(--color-primary)' }} />
                             {exp.startDate} — {exp.endDate}
@@ -124,19 +124,19 @@ export default function ExperiencePage() {
                       </div>
                     </div>
 
-                    <p className="text-sm mb-5 leading-relaxed" style={{ color: 'var(--color-text-muted)' }}>
+                    <p className="text-base mb-6 leading-relaxed" style={{ color: 'var(--color-text-muted)' }}>
                       {exp.description}
                     </p>
 
                     {/* Responsibilities */}
-                    <div className="mb-5">
-                      <h3 className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: 'var(--color-text-muted)', fontFamily: 'var(--font-code)' }}>
+                    <div className="mb-6">
+                      <h3 className="text-sm font-semibold uppercase tracking-wider mb-4" style={{ color: 'var(--color-text-muted)', fontFamily: 'var(--font-code)' }}>
                         Responsibilities
                       </h3>
-                      <ul className="flex flex-col gap-2">
+                      <ul className="flex flex-col gap-3">
                         {exp.responsibilities.map((r) => (
-                          <li key={r} className="flex items-start gap-2.5 text-sm" style={{ color: 'var(--color-text-muted)' }}>
-                            <CheckCircle2 size={14} className="mt-0.5 flex-shrink-0" style={{ color: 'var(--color-primary)' }} />
+                          <li key={r} className="flex items-start gap-3 text-base" style={{ color: 'var(--color-text-muted)' }}>
+                            <CheckCircle2 size={16} className="mt-0.5 flex-shrink-0" style={{ color: 'var(--color-primary)' }} />
                             {r}
                           </li>
                         ))}
@@ -144,13 +144,13 @@ export default function ExperiencePage() {
                     </div>
 
                     {/* Achievements */}
-                    <div className="mb-5">
-                      <h3 className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: 'var(--color-text-muted)', fontFamily: 'var(--font-code)' }}>
+                    <div className="mb-6">
+                      <h3 className="text-sm font-semibold uppercase tracking-wider mb-4" style={{ color: 'var(--color-text-muted)', fontFamily: 'var(--font-code)' }}>
                         Key Achievements
                       </h3>
-                      <ul className="flex flex-col gap-2">
+                      <ul className="flex flex-col gap-3">
                         {exp.achievements.map((a) => (
-                          <li key={a} className="flex items-start gap-2.5 text-sm" style={{ color: '#22c55e' }}>
+                          <li key={a} className="flex items-start gap-3 text-base" style={{ color: '#22c55e' }}>
                             <span className="mt-0.5">⭐</span>
                             {a}
                           </li>

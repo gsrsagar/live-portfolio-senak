@@ -25,7 +25,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
       className="card overflow-hidden group hoverable"
     >
       {/* Image */}
-      <div className="relative h-52 overflow-hidden">
+      <div className="relative h-56 overflow-hidden">
         <img
           src={project.image}
           alt={project.title}
@@ -79,24 +79,24 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
       </div>
 
       {/* Content */}
-      <div className="p-5">
+      <div className="p-7">
         <div className="flex items-center justify-between mb-2">
           <span className="badge">{project.category}</span>
           <span className="text-xs" style={{ color: 'var(--color-text-subtle)', fontFamily: 'var(--font-code)' }}>{project.year}</span>
         </div>
 
         <h3
-          className="text-base font-semibold mb-2 group-hover:text-primary transition-colors"
+          className="text-lg font-semibold mb-2.5 group-hover:text-primary transition-colors"
           style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text)' }}
         >
           {project.title}
         </h3>
-        <p className="text-sm mb-4 line-clamp-2" style={{ color: 'var(--color-text-muted)' }}>
+        <p className="text-base mb-5 line-clamp-2" style={{ color: 'var(--color-text-muted)' }}>
           {project.shortDescription}
         </p>
 
         {/* Tech Stack */}
-        <div className="flex flex-wrap gap-1.5 mb-4">
+        <div className="flex flex-wrap gap-2 mb-5">
           {project.techStack.slice(0, 4).map((tech) => (
             <span key={tech} className="badge" style={{ fontSize: '0.7rem', padding: '0.15rem 0.5rem' }}>{tech}</span>
           ))}
@@ -177,7 +177,7 @@ export default function ProjectsPage() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search projects…"
-                className="w-full pl-9 pr-4 py-2.5 rounded-xl text-sm outline-none"
+                className="w-full pl-9 pr-4 py-3 rounded-xl text-base outline-none"
                 style={{
                   background: 'var(--color-card)',
                   border: '1px solid var(--color-border)',
@@ -194,7 +194,7 @@ export default function ProjectsPage() {
                 <button
                   key={cat}
                   onClick={() => setCategory(cat)}
-                  className="px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 hoverable"
+                  className="px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200"
                   style={{
                     background: category === cat ? 'linear-gradient(135deg, #FF7A00, #FFC107)' : 'var(--color-card)',
                     color: category === cat ? '#000' : 'var(--color-text-muted)',
@@ -235,7 +235,7 @@ export default function ProjectsPage() {
             ) : (
               <motion.div
                 key="grid"
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
                 layout
               >
                 {filtered.map((project, i) => (

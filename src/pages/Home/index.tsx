@@ -152,17 +152,17 @@ function StatCard({ stat, index }: { stat: typeof STATS[0]; index: number }) {
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ delay: index * 0.1, duration: 0.5 }}
-      className="card p-6 text-center gradient-border"
+      className="card p-8 text-center gradient-border"
     >
       <p
-        className="text-3xl font-bold mb-1"
+        className="text-4xl font-bold mb-2"
         style={{ fontFamily: 'var(--font-number)', color: 'var(--color-primary)' }}
       >
         {stat.prefix}
         {count}
         {stat.suffix}
       </p>
-      <p className="text-sm" style={{ color: 'var(--color-text-muted)' }}>{stat.label}</p>
+      <p className="text-base" style={{ color: 'var(--color-text-muted)' }}>{stat.label}</p>
     </motion.div>
   );
 }
@@ -200,19 +200,19 @@ function FeaturedProjectCard({ project, index }: { project: typeof projects[0]; 
       </div>
 
       {/* Content */}
-      <div className="p-5">
+      <div className="p-7">
         <h3
-          className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors duration-200"
+          className="text-lg font-semibold mb-2.5 group-hover:text-primary transition-colors duration-200"
           style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text)' }}
         >
           {project.title}
         </h3>
-        <p className="text-sm mb-4 line-clamp-2" style={{ color: 'var(--color-text-muted)' }}>
+        <p className="text-base mb-5 line-clamp-2" style={{ color: 'var(--color-text-muted)' }}>
           {project.shortDescription}
         </p>
 
         {/* Tech Stack */}
-        <div className="flex flex-wrap gap-1.5 mb-4">
+        <div className="flex flex-wrap gap-2 mb-5">
           {project.techStack.slice(0, 4).map((tech) => (
             <span key={tech} className="badge" style={{ fontSize: '0.7rem', padding: '0.15rem 0.5rem' }}>
               {tech}
@@ -455,7 +455,7 @@ export default function HomePage() {
       {/* ─── STATS SECTION ────────────────────────────── */}
       <section className="section" aria-label="Statistics">
         <div className="container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {STATS.map((stat, i) => (
               <StatCard key={stat.label} stat={stat} index={i} />
             ))}
@@ -485,7 +485,7 @@ export default function HomePage() {
             </div>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, i) => (
               <FeaturedProjectCard key={project.id} project={project} index={i} />
             ))}
@@ -509,21 +509,21 @@ export default function HomePage() {
           <div className="bento-grid">
             {/* Experience Card */}
             <motion.div
-              className="card p-6 bento-cell-wide gradient-border"
+              className="card p-8 bento-cell-wide gradient-border"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              <p className="section-label mb-3">Work Experience</p>
-              <h3 className="text-lg font-semibold mb-2" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text)' }}>
+              <p className="section-label mb-4">Work Experience</p>
+              <h3 className="text-xl font-semibold mb-2.5" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text)' }}>
                 Cognifyz Technologies
               </h3>
-              <p className="text-sm mb-3" style={{ color: 'var(--color-primary)' }}>Full Stack Development Intern</p>
-              <p className="text-sm leading-relaxed" style={{ color: 'var(--color-text-muted)' }}>
+              <p className="text-base mb-3" style={{ color: 'var(--color-primary)' }}>Full Stack Development Intern</p>
+              <p className="text-base leading-relaxed" style={{ color: 'var(--color-text-muted)' }}>
                 Engineered responsive front-end components using React.js & Tailwind CSS, reducing load times by 20%. Built robust backend APIs with Node.js and JWT authentication.
               </p>
-              <div className="flex flex-wrap gap-2 mt-4">
+              <div className="flex flex-wrap gap-2.5 mt-5">
                 {['React', 'Node.js', 'AWS', 'MongoDB'].map((t) => (
                   <span key={t} className="badge">{t}</span>
                 ))}
@@ -532,22 +532,22 @@ export default function HomePage() {
 
             {/* GitHub Stats */}
             <motion.div
-              className="card p-6"
+              className="card p-8"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              <p className="section-label mb-4">GitHub Stats</p>
-              <div className="flex flex-col gap-4">
+              <p className="section-label mb-5">GitHub Stats</p>
+              <div className="flex flex-col gap-5">
                 {[
                   { label: 'Repositories', value: '25+' },
                   { label: 'Total Commits', value: '1k+' },
                   { label: 'Stars Earned', value: '150+' },
                 ].map(({ label, value }) => (
                   <div key={label} className="flex items-center justify-between">
-                    <span className="text-sm" style={{ color: 'var(--color-text-muted)' }}>{label}</span>
-                    <span className="text-lg font-bold" style={{ fontFamily: 'var(--font-number)', color: 'var(--color-primary)' }}>{value}</span>
+                    <span className="text-base" style={{ color: 'var(--color-text-muted)' }}>{label}</span>
+                    <span className="text-xl font-bold" style={{ fontFamily: 'var(--font-number)', color: 'var(--color-primary)' }}>{value}</span>
                   </div>
                 ))}
               </div>
@@ -555,14 +555,14 @@ export default function HomePage() {
 
             {/* Tech Stack */}
             <motion.div
-              className="card p-6"
+              className="card p-8"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
             >
-              <p className="section-label mb-4">Core Stack</p>
-              <div className="flex flex-wrap gap-2">
+              <p className="section-label mb-5">Core Stack</p>
+              <div className="flex flex-wrap gap-2.5">
                 {['React.js', 'Node.js', 'TypeScript', 'MongoDB', 'Express', 'Redis', 'PostgreSQL', 'Docker'].map((tech) => (
                   <motion.span
                     key={tech}
@@ -577,42 +577,42 @@ export default function HomePage() {
 
             {/* Availability */}
             <motion.div
-              className="card p-6 flex flex-col justify-between"
-              style={{ background: 'linear-gradient(135deg, rgba(255,122,0,0.08), rgba(255,193,7,0.04))' }}
+              className="card p-8 flex flex-col justify-between"
+              style={{ background: 'linear-gradient(135deg, rgba(255,122,0,0.06), rgba(255,193,7,0.03))' }}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
             >
               <div>
-                <div className="flex items-center gap-2 mb-3">
+                <div className="flex items-center gap-2.5 mb-4">
                   <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse" />
-                  <span className="text-xs font-medium" style={{ color: '#22c55e', fontFamily: 'var(--font-code)' }}>
+                  <span className="text-sm font-medium" style={{ color: '#22c55e', fontFamily: 'var(--font-code)' }}>
                     Open to Work
                   </span>
                 </div>
-                <h3 className="text-lg font-semibold mb-2" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text)' }}>
+                <h3 className="text-xl font-semibold mb-2.5" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text)' }}>
                   Available for Projects
                 </h3>
-                <p className="text-sm" style={{ color: 'var(--color-text-muted)' }}>
+                <p className="text-base" style={{ color: 'var(--color-text-muted)' }}>
                   Looking for full-time roles and interesting freelance projects.
                 </p>
               </div>
-              <Link to="/contact" className="btn btn-primary mt-4 w-full justify-center text-sm">
+              <Link to="/contact" className="btn btn-primary mt-6 w-full justify-center">
                 Let's Work Together →
               </Link>
             </motion.div>
 
             {/* Quick Links */}
             <motion.div
-              className="card p-6"
+              className="card p-8"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.5 }}
             >
-              <p className="section-label mb-4">Explore</p>
-              <div className="flex flex-col gap-2">
+              <p className="section-label mb-5">Explore</p>
+              <div className="flex flex-col gap-3">
                 {[
                   { label: 'View All Projects', href: '/projects' },
                   { label: 'My Skills', href: '/skills' },
@@ -622,7 +622,7 @@ export default function HomePage() {
                   <Link
                     key={label}
                     to={href}
-                    className="flex items-center justify-between px-3 py-2.5 rounded-lg text-sm transition-all duration-200 hoverable"
+                    className="flex items-center justify-between px-4 py-3 rounded-xl text-base transition-all duration-200"
                     style={{ border: '1px solid var(--color-border)', color: 'var(--color-text-muted)' }}
                   >
                     <span>{label}</span>
