@@ -44,7 +44,7 @@ export default function Navbar() {
         role="banner"
       >
         <nav className="container" role="navigation" aria-label="Main navigation">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between h-[4.25rem]">
 
             {/* Logo */}
             <NavLink to="/" className="flex items-center gap-2 group" aria-label="Home">
@@ -68,13 +68,13 @@ export default function Navbar() {
             </NavLink>
 
             {/* Desktop Nav Links */}
-            <ul className="hidden lg:flex items-center gap-1" role="list">
+            <ul className="hidden lg:flex items-center gap-3" role="list">
               {NAV_LINKS.slice(0, 6).map((link) => (
                 <li key={link.href}>
                   <NavLink
                     to={link.href}
                     className={({ isActive }) =>
-                      `relative px-3 py-1.5 text-sm font-medium rounded-lg transition-colors duration-200 group ${
+                      `relative px-4 py-2 text-[0.8125rem] font-medium rounded-lg transition-colors duration-200 whitespace-nowrap ${
                         isActive
                           ? 'text-primary'
                           : 'text-muted hover:text-white'
@@ -102,7 +102,7 @@ export default function Navbar() {
             </ul>
 
             {/* Actions */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1.5">
               {/* Command Palette */}
               <button
                 onClick={() => openCmd(true)}

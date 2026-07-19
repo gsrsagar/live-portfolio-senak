@@ -52,12 +52,12 @@ function StatCounter({ stat, index }: { stat: typeof stats[0]; index: number }) 
   return (
     <motion.div
       ref={ref}
-      className="card p-8 text-center"
+      className="card p-8 text-center gradient-border"
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ delay: index * 0.1 }}
     >
-      <p className="text-4xl font-bold mb-2" style={{ fontFamily: 'var(--font-number)', color: 'var(--color-primary)' }}>
+      <p className="text-4xl font-bold mb-3" style={{ fontFamily: 'var(--font-number)', color: 'var(--color-primary)' }}>
         {count}{stat.suffix}
       </p>
       <p className="text-base" style={{ color: 'var(--color-text-muted)' }}>{stat.label}</p>
@@ -87,34 +87,34 @@ export default function AchievementsPage() {
           </motion.div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-20">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-24">
             {stats.map((s, i) => <StatCounter key={s.label} stat={s} index={i} />)}
           </div>
 
           {/* Achievements Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {achievements.map((a, i) => (
               <motion.div
                 key={a.id}
-                className="card p-8 gradient-border"
+                className="card p-9 gradient-border"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
                 whileHover={{ y: -4 }}
               >
-                <div className="flex items-start gap-5">
+                <div className="flex items-start gap-6">
                   {/* Icon */}
                   <div
-                    className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0"
-                    style={{ background: `${categoryColors[a.category] ?? '#FF7A00'}12` }}
+                    className="w-15 h-15 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0"
+                    style={{ background: `${categoryColors[a.category] ?? '#FF7A00'}15`, width: '3.75rem', height: '3.75rem' }}
                   >
                     {a.icon}
                   </div>
 
                   <div className="flex-1">
-                    <div className="flex items-center justify-between gap-2 mb-2">
-                      <h3 className="text-lg font-semibold" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text)' }}>
+                    <div className="flex items-center justify-between gap-3 mb-3">
+                      <h3 className="text-xl font-semibold" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text)' }}>
                         {a.title}
                       </h3>
                       {a.link && (
@@ -124,11 +124,11 @@ export default function AchievementsPage() {
                       )}
                     </div>
 
-                    <div className="flex items-center gap-2.5 mb-3">
+                    <div className="flex items-center gap-3 mb-4">
                       <span
-                        className="px-2.5 py-1 rounded-full text-xs font-medium"
+                        className="px-3 py-1 rounded-full text-xs font-medium"
                         style={{
-                          background: `${categoryColors[a.category] ?? '#FF7A00'}12`,
+                          background: `${categoryColors[a.category] ?? '#FF7A00'}15`,
                           color: categoryColors[a.category] ?? 'var(--color-primary)',
                           fontFamily: 'var(--font-code)',
                         }}

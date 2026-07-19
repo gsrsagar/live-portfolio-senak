@@ -108,7 +108,7 @@ export default function AboutPage() {
               ].map(({ label, value }) => (
                 <div
                   key={label}
-                  className="card p-6"
+                  className="card"
                 >
                   <p className="text-sm mb-2" style={{ color: 'var(--color-text-muted)', fontFamily: 'var(--font-code)' }}>{label}</p>
                   <p className="text-base font-semibold" style={{ color: 'var(--color-text)', fontFamily: 'var(--font-heading)' }}>{value}</p>
@@ -242,7 +242,7 @@ export default function AboutPage() {
                   </div>
 
                   {/* Card */}
-                  <div className="flex-1 card p-7">
+                  <div className="flex-1 card p-9">
                     <div className="flex items-start justify-between gap-2 mb-3">
                       <span
                         className="text-xs font-bold"

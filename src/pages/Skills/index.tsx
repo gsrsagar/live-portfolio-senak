@@ -35,7 +35,7 @@ const techIcons: Record<string, string> = {
 function SkillCard({ skill, index }: { skill: typeof skills[0]; index: number }) {
   return (
     <motion.div
-      className="card p-6"
+      className="card"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}

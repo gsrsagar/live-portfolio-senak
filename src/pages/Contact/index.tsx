@@ -237,7 +237,7 @@ export default function ContactPage() {
             >
               {/* Availability */}
               <div
-                className="card p-7"
+                className="card"
                 style={{ background: 'linear-gradient(135deg, rgba(34,197,94,0.06), var(--color-card))' }}
               >
                 <div className="flex items-center gap-2 mb-2">
@@ -252,7 +252,7 @@ export default function ContactPage() {
               </div>
 
               {/* Direct Connect */}
-              <div className="card p-7">
+              <div className="card">
                 <h3 className="text-sm font-semibold mb-4 uppercase tracking-wider" style={{ fontFamily: 'var(--font-code)', color: 'var(--color-text-muted)' }}>
                   Direct Connect
                 </h3>
@@ -284,7 +284,7 @@ export default function ContactPage() {
               </div>
 
               {/* Location */}
-              <div className="card p-7">
+              <div className="card">
                 <h3 className="flex items-center gap-2 text-sm font-semibold mb-3 uppercase tracking-wider" style={{ fontFamily: 'var(--font-code)', color: 'var(--color-text-muted)' }}>
                   <MapPin size={14} style={{ color: 'var(--color-primary)' }} /> Location
                 </h3>
@@ -307,7 +307,7 @@ export default function ContactPage() {
               </div>
 
               {/* Phone */}
-              <div className="card p-7 flex items-center gap-4">
+              <div className="card flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'rgba(255,122,0,0.1)' }}>
                   <Phone size={18} style={{ color: 'var(--color-primary)' }} />
                 </div>
